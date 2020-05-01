@@ -13,11 +13,46 @@ body {
   font-family: "Quicksand", sans-serif, Arial, Helvetica;
   color: var(--black-haze);
 }
+/*h*/
+h1 {
+  font-size: 2em;
+  font-weight: bolder;
+  text-decoration: overline;
+}
+
+h2 {
+  font-size: 1.5em;
+  font-weight: bolder;
+  text-decoration: line-through;
+}
+
+h3 {
+  font-size: 1.2em;
+  font-weight: bolder;
+  text-decoration: underline;
+}
+/*Quotes*/
+q {
+  quotes: "«" "»" "‹" "›";
+  font-size: 1.30em;
+}
+
+q:before {
+  content: open-quote;
+}
+
+q:after {
+  content: close-quote;
+}
+
+q:before, q:after {
+  color: purple;
+}
 /*---- Page Layout ----*/
 .gridcontainer {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  grid-template-rows: repeat(6, 1fr);
+  grid-template-rows: repeat(6, auto);
 }
 /*---- Header ----*/
 header {
@@ -45,6 +80,7 @@ header {
   font-size: 40px;
   text-shadow: 1px 2px var(--black-haze);
   align-self: center;
+  fon
 }
 /*---- Nav ----*/
 nav {
@@ -70,27 +106,54 @@ aside {
   grid-area: 2 / 1 /5 / 2;
 }
 
-/*---- Constenet -----*/
+/*---- Contenet -----*/
 article {
   background-color: var(--dark-shade);
   margin-left: 1vw;
   padding-left: 2vw;
-
   border-radius: 10%;
   grid-area: 2 / 2 / 5 / 8;
   border: 3px solid var(--vin-rouge);
 }
 .article1 {
+  margin-top: 2.5vh;
+  display: grid;
+  grid-template-columns: 170px 1fr;
+  grid-template-rows: auto auto;
+  gap: 1vh 1vw;
   width: 100%;
   margin-left: 0;
   border-bottom: 3px solid var(--vin-rouge);
 }
+
+.card {
+  width: 170px;
+  height: 280px;
+  box-shadow: 0 4px 8px 0 rgba(91, 235, 191, 0.336);
+  transition: 0.3s;
+  border-radius: 10%;
+  border: 3px solid var(--vin-rouge);
+}
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* Add rounded corners to the top left and the top right corner of the image */
+.card img {
+  border-radius: 5px 5px 0 0;
+}
 /*---- Footer -----*/
 footer {
+  text-align: center;
   border-radius: 10%;
   height: 300px;
   border: 3px solid var(--vin-rouge);
   grid-area: 5 / 1 / 8 / 8;
+}
+footer p {
+  font-family: 'Faustina',sans-serif ;
+  font-size: 1.05em;
+  text-shadow: aliceblue 2px 0 3px;
 }
 .button {
   background-color: var(--vin-rouge);
@@ -158,5 +221,10 @@ footer {
     margin-top: 2vh;
     margin-bottom: 2vh;
     width: 100%;
+  }
+  .article1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 }
